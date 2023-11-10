@@ -1,24 +1,22 @@
 #include "encrypt_ez.h"
 
 int main(){
-  char a = 'a',
-       b = rot_char(a, 'a', 0),
        //Cleartext version of string
-       *clear = (char *)calloc(15, sizeof(char)),
+  char *clear_text = (char *)calloc(15, sizeof(char)),
        //Password
-       *psk = (char *)calloc(5, sizeof(char)),
+       *password = (char *)calloc(5, sizeof(char)),
        //Encrypted string
-       *enc,
+       *encrypted,
        //Decrypted string
-       *dec;
-  clear = "we the people\0";
-  psk = "asdf\0";
-  enc = (char *)calloc(strlen(clear), sizeof(char));
-  dec = (char *)calloc(strlen(clear), sizeof(char));
-  enc = crypt_string(ENCRYPT_DATA, clear, psk);
-  dec = crypt_string(DECRYPT_DATA, enc, psk);
-  printf("%s=>%s", clear, enc);
+       *decrypted;
+  clear_text = "we the people\0";
+  password = "the longer the stronger\0";
+  encrypted = (char *)calloc(strlen(clear_text), sizeof(char));
+  decrypted = (char *)calloc(strlen(clear_text), sizeof(char));
+  encrypted = crypt_string(ENCRYPT_DATA, clear_text, password);
+  decrypted = crypt_string(DECRYPT_DATA, encrypted, password);
+  printf("%s=>%s", clear_text, encrypted);
   printf("\n");
-  printf("%s<=%s", dec, enc);
+  printf("%s<=%s", decrypted, encrypted);
   return 0;
 }

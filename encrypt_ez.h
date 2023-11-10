@@ -4,7 +4,7 @@
 
 #define ENCRYPT_DATA 0x1
 #define DECRYPT_DATA 0x0
-#define __VERBOSE 0x0
+#define __VERBOSE 0x1
 
 void print_binary(unsigned char character_to_print){
   for(unsigned char i = 0; i < 8; i++){
@@ -18,7 +18,7 @@ void print_binary(unsigned char character_to_print){
 }
 
 //Basic Binary Rotation and BitFlip Ops to encrypt. Shouldn't be used for anything serious.
-//Which direction(left_direction=>[Left = 1, Right = 0]) to rotate char (char_to_rot) an amount of times (bit_rotate_count)
+//Based on ASCII table - This function determines which direction(left_direction=>[Left = 1, Right = 0]) to rotate char (char_to_rot) an amount of times (bit_rotate_count)
 char rot_char(char char_to_rot, char psk_char, bool left_direction){
   char temp_char;
   unsigned char true_rotate_num = (unsigned char)psk_char%7;
