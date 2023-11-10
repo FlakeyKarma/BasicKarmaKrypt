@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define ENCRYPT_DATA 0x1
 #define DECRYPT_DATA 0x0

@@ -15,8 +15,9 @@ int main(){
   decrypted = (char *)calloc(strlen(clear_text), sizeof(char));
   encrypted = crypt_string(ENCRYPT_DATA, clear_text, password);
   decrypted = crypt_string(DECRYPT_DATA, encrypted, password);
-  printf("%s=>%s", clear_text, encrypted);
-  printf("\n");
-  printf("%s<=%s", decrypted, encrypted);
+  printf("Original:%s\n", clear_text);
+  printf("Password:%s\n", password);
+  printf("Encrypted:%s\n", encrypted);
+  printf("Decrypted:%s\n", decrypted);
   return 0;
 }
