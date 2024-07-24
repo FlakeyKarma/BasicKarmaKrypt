@@ -1,7 +1,7 @@
 #Compiler used
 COMPILER=clang
 #Output binary name
-OUTPUT_BINARY=cryptTest
+OUTPUT_BINARY=bkk
 #Optimization level of code
 OPTIMIZATION_LEVEL=z
 #File to compile
